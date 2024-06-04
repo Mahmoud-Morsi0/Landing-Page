@@ -12,12 +12,12 @@ const HoverVideo:React.FC<HoverVideoProps>=({videoSrc,picSrc,altText})=>{
 
 return(
     <div
-    className={`bg-[#242424] rounded-xl h-[765px] mt-4`}
+    className={`bg-[#242424]  rounded-xl h-[765px] mt-4 w-full`}
     onMouseEnter={()=>setIsHovered(true)} 
     onMouseLeave={()=>setIsHovered(false)} 
     >
 {isHovered?(
-    <video className=" w-full h-[800px]" src={videoSrc} autoPlay muted loop ></video>
+    <video className=" w-full h-[700px]" src={videoSrc} autoPlay muted loop ></video>
     ):(
         <img className="h-[570px] w-full " src={picSrc} alt={altText} />
     )}

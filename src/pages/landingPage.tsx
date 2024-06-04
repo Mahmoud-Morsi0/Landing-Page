@@ -20,9 +20,9 @@ function LandingPage() {
     return (
         <>
             <Hero></Hero>
-            <div className=' container p-32 bg-[#E4E2DD] text-black'>
 
 
+            <div className=' p-32 bg-[#E4E2DD] text-black'>
                 <div className="clint-title  mx-auto text-center">
                     <h2 className='text-5xl text-[#83ab44] font-semibold'>Folks at these Awesome Companies are Already Using Startup Framework</h2>
                 </div>

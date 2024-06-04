@@ -19,6 +19,7 @@ import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { useUser } from "@/context/userContext"
 
+
 const FormSchema = z.object({
   username: z.string().min(3, {
     message: "Username must be at least 3 characters.",
@@ -28,8 +29,9 @@ const FormSchema = z.object({
   }),
 })
 
+
 export function InputForm() {
-  const [isVisable, setVisability] = useState(false)
+  const [pending,setPending]=useState(false)
   const navigate = useNavigate()
 const {user,setUser}=useUser()
 
@@ -42,6 +44,7 @@ const {user,setUser}=useUser()
   })
 
   function onSubmit(data: z.infer<typeof FormSchema>) {
+    setPending(true)
     toast({
       title: "You submitted the following values:",
       description: (
@@ -97,7 +100,7 @@ const {user,setUser}=useUser()
             <FormItem>
               <FormLabel>Password</FormLabel>
               <FormControl>
-                <Input placeholder="Password" type={`${isVisable ? "text" : "password"}`} {...field} />
+                <Input placeholder="Password" type="password" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -108,6 +111,7 @@ const {user,setUser}=useUser()
           <Button
             className="bg-[#363636] hover:bg-[#abd665] disabled:inline-block hover:text-[#363636] "
             type="submit"
+            disabled={pending}
           >
             Log In</Button>
           <p
