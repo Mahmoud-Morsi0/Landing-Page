@@ -6,6 +6,7 @@ import Login from './pages/login';
 import Signup from './pages/signup';
 import Home from './pages/home';
 import ProtectedRoute from './assets/protectedRoute';
+import User from './pages/user';
 function App() {
 
   return (
@@ -13,17 +14,14 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<LandingPage />} />
-          <Route path='auth/login' element={<Login/>}/>
-          <Route path='auth/signup' element={<Signup/>}/>
-          <Route element={<ProtectedRoute/>}>
-             <Route path='/home' element={<Home/>}/>
+          <Route path='auth/login' element={<Login />} />
+          <Route path='auth/signup' element={<Signup />} />
+          <Route element={<ProtectedRoute />}>
+            <Route path='/home' element={<Home />} />
+            <Route path='/home/user/:id' element={<User />} />
           </Route>
-            
-          
         </Routes>
-
       </BrowserRouter>
-
     </>
   )
 }

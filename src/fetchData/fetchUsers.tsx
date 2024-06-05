@@ -1,7 +1,7 @@
 import axios from "axios"
-import React from "react"
 
-const fetchData:React.FC<[]> = async ({ queryKey }) => {
+
+const FetchData = async ({ queryKey }) => {
     const id = queryKey[1]
     try {
 
@@ -13,4 +13,4 @@ const fetchData:React.FC<[]> = async ({ queryKey }) => {
     }
 
 }
-export default fetchData
+export default FetchData

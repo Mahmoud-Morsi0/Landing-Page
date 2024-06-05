@@ -7,7 +7,7 @@ function Signup() {
                 <div className='bg-[#242424] w-2/3 p-20 rounded-lg'>
                     <RegForm />
                 </div>
-                <div className='bg-[#92b756] w-1/3 h-full'></div>
+                
             </div>
         </>
     )

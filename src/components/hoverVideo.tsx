@@ -12,7 +12,7 @@ const HoverVideo:React.FC<HoverVideoProps>=({videoSrc,picSrc,altText})=>{
 
 return(
     <div
-    className={`bg-[#242424]  rounded-xl h-[765px] mt-4 w-full`}
+    className={` bg-gradient-to-r from-[#242424] to-[#101010]   rounded-xl h-[765px] mt-4 w-full`}
     onMouseEnter={()=>setIsHovered(true)} 
     onMouseLeave={()=>setIsHovered(false)} 
     >

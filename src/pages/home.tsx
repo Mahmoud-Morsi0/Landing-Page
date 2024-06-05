@@ -1,33 +1,47 @@
-import axios from 'axios'
-import { useEffect, useState } from 'react'
 
-function Home() {
-        const [data, setData] = useState([])
-    const getAll= async ()=>{
-       const {data}=await axios.get("https://jsonplaceholder.typicode.com/users")
-        console.log(data)
-        setData(data)
-    }
+import { useQuery } from '@tanstack/react-query';
+import { User } from '@/types/User';
+import { useNavigate } from 'react-router-dom';
+import FetchData from '@/fetchData/fetchUsers';
+import { Skeleton } from '@/components/ui/skeleton';
 
-    useEffect(()=>{
-        getAll()
-    },[])
-        
-  return (
-    <div>
-         <div className=' relative flex justify-center align-middle items-center flex-wrap gap-10 h-screen p-5 bg-[#181818]'>
-                {data?.map(( data ) => {
-                    return (
-                        <div className='rounded w-80 cursor-pointer text-center h-40 bg-[#c3c3c3]  ' key={data.id} >
-                            <div >
-                                <div className='text-3xl text-black'>{data.name}</div>
-                            </div>
-                        </div>
-                    )
-                })}
+const Home = () => {
+    const navigate = useNavigate()
+    const { data, isLoading, isError, error } = useQuery({
+        queryKey: ['users'],
+        queryFn: FetchData,
+    });
+
+        if (isLoading) return (
+        <>
+            <div className='flex justify-center align-middle items-center h-screen '>
+                <div>
+                    <Skeleton className="w-[70px] h-[70px] rounded-full bg-[#404040]" />
+                </div>
             </div>
-    </div>
-  )
-}
+        </>
+    )
+    if (isError) return <h1>Error: {error.message}</h1>;
+    const handellNavigatToUser = (id: number) => {
+        navigate(`user/${id}`)
+    }
+    return (
+        <div className='relative flex justify-center align-middle items-center flex-wrap gap-10 h-screen p-5 bg-[#181818]'>
+            {data?.map((user: User) => (
+                <div className='text-white w-80 cursor-pointer text-center min-h-80 line-clamp-4  spin-in bg-gradient-to-r from-[#202020] to-[#404040] rounded-xl' onClick={() => { handellNavigatToUser(user.id) }} key={user.id}>
+                    <div>
+                        <div className='text-3xl text-[#a3d36c] my-7'>{user.name}</div>
+                        <div className='text-xl text-white my-3'>{user.username}</div>
+                        <div className='text-xl text-white'>{user.phone}</div>
+                        <div className='text-xl text-white my-3'>{user.email}</div>
+                        <div className='text-xl text-white'>{user.website}</div>
 
-export default Home
+
+                    </div>
+                </div>
+            ))}
+        </div>
+    );
+};
+
+export default Home;
