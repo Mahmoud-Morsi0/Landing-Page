@@ -15,7 +15,6 @@ import {
 } from "@/components/ui/form"
 import { toast } from "@/components/ui/use-toast"
 import { Input } from "./input"
-import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 
 const FormSchema = z.object({
@@ -34,9 +33,6 @@ const FormSchema = z.object({
 })
 
 export function RegForm() {
-    const [isVisable, setVisability] = useState(false)
-
-
 
     const form = useForm<z.infer<typeof FormSchema>>({
         resolver: zodResolver(FormSchema),
@@ -50,9 +46,7 @@ export function RegForm() {
 
 
     const navigate = useNavigate()
-    const handellNavigate = () => {
-        navigate("/auth/login")
-    }
+
     function onSubmit(data: z.infer<typeof FormSchema>) {
         toast({
             title: "You submitted the following values:",
@@ -63,6 +57,9 @@ export function RegForm() {
             ),
         })
         console.log(data)
+        if(data){
+            navigate("auth/login")
+        }
     }
 
     return (
@@ -115,7 +112,7 @@ export function RegForm() {
                         <FormItem>
                             <FormLabel>Password</FormLabel>
                             <FormControl>
-                                <Input placeholder="Password" type={`${isVisable ? "text" : "password"}`} {...field} />
+                                <Input placeholder="Password" type={"password"} {...field} />
                             </FormControl>
                             <FormMessage />
                         </FormItem>
@@ -129,7 +126,6 @@ export function RegForm() {
                     >
                         Sign Up</Button>
                     <p
-                        onClick={handellNavigate}
                         className="text-[#abd665] cursor-pointer text-sm"
                     >
                         Log In</p>

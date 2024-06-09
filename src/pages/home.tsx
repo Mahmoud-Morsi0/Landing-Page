@@ -12,7 +12,7 @@ const Home = () => {
         queryFn: FetchData,
     });
 
-        if (isLoading) return (
+    if (isLoading) return (
         <>
             <div className='flex justify-center align-middle items-center h-screen '>
                 <div>
@@ -22,21 +22,23 @@ const Home = () => {
         </>
     )
     if (isError) return <h1>Error: {error.message}</h1>;
-    const handellNavigatToUser = (id: number) => {
+    const handleNavigateToUser = (id: number) => {
         navigate(`user/${id}`)
     }
     return (
         <div className='relative flex justify-center align-middle items-center flex-wrap gap-10 h-screen p-5 bg-[#181818]'>
             {data?.map((user: User) => (
-                <div className='text-white w-80 cursor-pointer text-center min-h-80 line-clamp-4  spin-in bg-gradient-to-r from-[#202020] to-[#404040] rounded-xl' onClick={() => { handellNavigatToUser(user.id) }} key={user.id}>
+                <div
+                    className='text-white w-80 cursor-pointer text-center min-h-80 line-clamp-4 spin-in bg-gradient-to-r from-[#202020] to-[#404040] rounded-xl'
+                    onClick={() => handleNavigateToUser(user.id)}
+                    key={user.id}
+                >
                     <div>
                         <div className='text-3xl text-[#a3d36c] my-7'>{user.name}</div>
                         <div className='text-xl text-white my-3'>{user.username}</div>
                         <div className='text-xl text-white'>{user.phone}</div>
                         <div className='text-xl text-white my-3'>{user.email}</div>
                         <div className='text-xl text-white'>{user.website}</div>
-
-
                     </div>
                 </div>
             ))}
@@ -44,4 +46,6 @@ const Home = () => {
     );
 };
 
+
 export default Home;
+

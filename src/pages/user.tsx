@@ -29,19 +29,17 @@ function User() {
                 className='bg-gradient-to-r from-[#202020] to-[#404040] min-h-3/6 py-20 w-1/3 rounded-xl text-white text-center'
             >
                 <h1 className='text-3xl text-[#a3d36c] font-semibold mb-3'>{data.name}</h1>
-                <h2>{data.email}</h2>
-                <h2>{data.phone}</h2>
-                <h2>{data.website}</h2>
-                <h2>{data.company.name}</h2>
-                <h2>{data.company.catchPhrase}</h2>
-                <h2>{data.company.bs}</h2>
-                <h2>{data.address.street}</h2>
-                <h2>{data.address.suite}</h2>
-                <h2>{data.address.city}</h2>
-                <h2>{data.address.zipcode}</h2>
-                <h2>{data.address.geo.lat}</h2>
-                <h2>{data.address.geo.lng}</h2>
-                <h2>{data.username}</h2>
+                <h2>User Name :  {data.username}</h2>
+                <h2>Email : {data.email}</h2>
+                <h2>Phone :  {data.phone}</h2>
+                <h2>Website :  {data.website}</h2>
+                <h2>Company :  {data.company.name}</h2>
+                <h2>Address "Street" :  {data.address.street}</h2>
+                <h2>Address "Suite" :  {data.address.suite}</h2>
+                <h2>Address "City" :  {data.address.city}</h2>
+                <h2>Address "ZipCode" :  {data.address.zipcode}</h2>
+                <h2>Address "geo-lat" :  {data.address.geo.lat}</h2>
+                <h2>Address "geo-lng" :  {data.address.geo.lng}</h2>
             </div>
             <div></div>
         </div>
