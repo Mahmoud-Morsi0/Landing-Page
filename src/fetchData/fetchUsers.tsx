@@ -6,7 +6,9 @@ const FetchData = async ({ queryKey }) => {
     try {
 
         const { data } = await axios.get(`https://jsonplaceholder.typicode.com/users/${id ? id : ''}`)
+        !id
         return data
+
     }
     catch {
         throw new Error(`No data for ${id ? id : "users"}`)

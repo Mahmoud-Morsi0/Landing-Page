@@ -6,8 +6,6 @@ import { UserProvider } from './context/userContext.tsx';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Provider } from 'react-redux'; // Correct Provider import for Redux
 import { store } from './store/store.js'; // Ensure correct path
-import { User } from './types/User';
-
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {

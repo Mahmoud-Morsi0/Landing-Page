@@ -4,6 +4,12 @@ import { User } from '@/types/User';
 import { useNavigate } from 'react-router-dom';
 import FetchData from '@/fetchData/fetchUsers';
 import { Skeleton } from '@/components/ui/skeleton';
+import {
+    useSelector,
+    useDispatch,
+} from 'react-redux';
+import { RootState, setUsers } from '@/store/store';
+import { useEffect } from 'react';
 
 const Home = () => {
     const navigate = useNavigate()
@@ -11,6 +17,17 @@ const Home = () => {
         queryKey: ['users'],
         queryFn: FetchData,
     });
+
+    const users = useSelector((state: RootState) => state.user);
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        if (data) {
+            dispatch(setUsers(data));
+        }
+    }, [data, dispatch]);
+
+    console.log(users)
 
     if (isLoading) return (
         <>
@@ -21,9 +38,11 @@ const Home = () => {
             </div>
         </>
     )
+    
     if (isError) return <h1>Error: {error.message}</h1>;
     const handleNavigateToUser = (id: number) => {
         navigate(`user/${id}`)
+
     }
     return (
         <div className='relative flex justify-center align-middle items-center flex-wrap gap-10 h-screen p-5 bg-[#181818]'>
