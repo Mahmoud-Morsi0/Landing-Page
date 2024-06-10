@@ -5,7 +5,7 @@ import LandingPage from './pages/landingPage';
 import Login from './pages/login';
 import Signup from './pages/signup';
 import Home from './pages/home';
-import ProtectedRoute from './assets/protectedRoute';
+import ProtectedRoute from './protectedRoute/protectedRoute';
 import User from './pages/user';
 function App() {
 

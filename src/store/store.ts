@@ -49,7 +49,7 @@ const counterSlice = createSlice({
     }
 })
 
-export const { setUsers,addUser } = userSlice.actions
+export const { setUsers, addUser, removeUser, updateUser } = userSlice.actions
 export const { increment, decrement, set } = counterSlice.actions
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;

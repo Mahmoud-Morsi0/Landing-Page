@@ -1,17 +1,16 @@
 import axios from "axios"
 
 
-const FetchData = async ({ queryKey }) => {
-    const id = queryKey[1]
+const FetchData = async () => {
+    
     try {
 
-        const { data } = await axios.get(`https://jsonplaceholder.typicode.com/users/${id ? id : ''}`)
-        !id
+        const { data } = await axios.get(`https://jsonplaceholder.typicode.com/users/`)
         return data
 
     }
     catch {
-        throw new Error(`No data for ${id ? id : "users"}`)
+        throw new Error(`No data for Users`)
     }
 
 }
