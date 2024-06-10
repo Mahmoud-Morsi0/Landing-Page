@@ -14,12 +14,12 @@ function User() {
         queryFn: FetchData,
     });
 
-    
-    const users=useSelector((state:RootState)=>state.user)
-    console.log('Users from User => ',users)
 
-    const selectedUser=users.filter(user=>{
-        return user.id===Number(id)
+    const users = useSelector((state: RootState) => state.user)
+    console.log('Users from User => ', users)
+
+    const selectedUser = users.filter(user => {
+        return user.id === Number(id)
     })
     console.log(selectedUser)
 
@@ -37,41 +37,42 @@ function User() {
 
     return (
         <div className='h-screen'>
-        <div className='pt-10 px-56'>
-               <FaArrowCircleLeft 
-               className='text-[#81fc5b]
-               cursor-pointer 
-               hover:text-[#404040]
-               hover:scale-125
-               transition-all
-               duration-300
-               ease-in-out
-               text-4xl
-               ' 
-               onClick={() => window.history.back()}
-               />
+            <div className='pt-10 px-56'>
+                <FaArrowCircleLeft
+                    className='
+                    text-[#e8e8e8]
+                    hover:text-[#81fc5b]
+                    cursor-pointer 
+                    hover:scale-125
+                    transition-all
+                    duration-300
+                    ease-in-out
+                    text-4xl
+               '
+                    onClick={() => window.history.back()}
+                />
 
-            </div>     
-           <div className='flex justify-center align-middle items-center h-screen '>
-            
-            <div
-                className='bg-gradient-to-r from-[#202020] to-[#404040] min-h-3/6 py-20 w-1/3 rounded-xl text-white text-center'
-            >
-                <h1 className='text-5xl text-[#81fc5b] font-semibold mb-3'>{selectedUser[0].name}</h1>
-                <h2>User Name :  {selectedUser[0].username}</h2>
-                <h2>Email : {selectedUser[0].email}</h2>
-                <h2>Phone :  {selectedUser[0].phone}</h2>
-                <h2>Website :  {selectedUser[0].website}</h2>
-                <h2>Company :  {selectedUser[0].company.name}</h2>
-                <h2>Address "Street" :  {selectedUser[0].address.street}</h2>
-                <h2>Address "Suite" :  {selectedUser[0].address.suite}</h2>
-                <h2>Address "City" :  {selectedUser[0].address.city}</h2>
-                <h2>Address "ZipCode" :  {selectedUser[0].address.zipcode}</h2>
-                <h2>Address "geo-lat" :  {selectedUser[0].address.geo.lat}</h2>
-                <h2>Address "geo-lng" :  {selectedUser[0].address.geo.lng}</h2>
             </div>
-            <div></div>
-        </div>
+            <div className='flex justify-center align-middle items-center h-screen '>
+
+                <div
+                    className='bg-gradient-to-r from-[#202020] to-[#404040] min-h-3/6 py-20 w-1/3 rounded-xl text-white text-center'
+                >
+                    <h1 className='text-5xl text-[#81fc5b] font-semibold mb-3'>{selectedUser[0].name}</h1>
+                    <h2>User Name :  {selectedUser[0].username}</h2>
+                    <h2>Email : {selectedUser[0].email}</h2>
+                    <h2>Phone :  {selectedUser[0].phone}</h2>
+                    <h2>Website :  {selectedUser[0].website}</h2>
+                    <h2>Company :  {selectedUser[0].company.name}</h2>
+                    <h2>Address "Street" :  {selectedUser[0].address.street}</h2>
+                    <h2>Address "Suite" :  {selectedUser[0].address.suite}</h2>
+                    <h2>Address "City" :  {selectedUser[0].address.city}</h2>
+                    <h2>Address "ZipCode" :  {selectedUser[0].address.zipcode}</h2>
+                    <h2>Address "geo-lat" :  {selectedUser[0].address.geo.lat}</h2>
+                    <h2>Address "geo-lng" :  {selectedUser[0].address.geo.lng}</h2>
+                </div>
+                <div></div>
+            </div>
         </div>
 
     )
