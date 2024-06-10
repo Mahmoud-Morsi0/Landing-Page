@@ -4,6 +4,7 @@ import { useQuery } from '@tanstack/react-query';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { RootState } from '@/store/store';
+import { FaArrowCircleLeft } from "react-icons/fa";
 
 function User() {
     const { id } = useParams()
@@ -35,7 +36,24 @@ function User() {
     if (isError) return <h2>Error: {error.message}</h2>;
 
     return (
-        <div className='flex justify-center align-middle items-center h-screen '>
+        <div className='h-screen'>
+        <div className='pt-10 px-56'>
+               <FaArrowCircleLeft 
+               className='text-[#81fc5b]
+               cursor-pointer 
+               hover:text-[#404040]
+               hover:scale-125
+               transition-all
+               duration-300
+               ease-in-out
+               text-4xl
+               ' 
+               onClick={() => window.history.back()}
+               />
+
+            </div>     
+           <div className='flex justify-center align-middle items-center h-screen '>
+            
             <div
                 className='bg-gradient-to-r from-[#202020] to-[#404040] min-h-3/6 py-20 w-1/3 rounded-xl text-white text-center'
             >
@@ -54,6 +72,8 @@ function User() {
             </div>
             <div></div>
         </div>
+        </div>
+
     )
 }
 

@@ -30,9 +30,6 @@ const Home = () => {
         }
     }, [data, dispatch]);
 
-    console.log(users)
-    console.log(usersCounter)
-
     if (isLoading) return (
         <>
             <div className='flex justify-center align-middle items-center h-screen '>
@@ -51,8 +48,7 @@ const Home = () => {
     return (
         <>
             <div className='py-5 px-40 bg-[#181818] '>
-                <h2>Users : <span className='text-[#81fc5b]'>{usersCounter.value}</span></h2>
-                
+                <h2 >Users : <span className='text-[#81fc5b]'>{usersCounter.value}</span></h2> 
             </div>
         <div className='relative flex justify-center align-middle items-center flex-wrap gap-10 h-screen p-5 bg-[#181818]'>
             
