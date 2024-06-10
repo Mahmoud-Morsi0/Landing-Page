@@ -34,7 +34,7 @@ const Home = () => {
                     key={user.id}
                 >
                     <div>
-                        <div className='text-3xl text-[#a3d36c] my-7'>{user.name}</div>
+                        <div className='text-3xl text-[#81fc5b] my-7'>{user.name}</div>
                         <div className='text-xl text-white my-3'>{user.username}</div>
                         <div className='text-xl text-white'>{user.phone}</div>
                         <div className='text-xl text-white my-3'>{user.email}</div>

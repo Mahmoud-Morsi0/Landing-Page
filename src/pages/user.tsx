@@ -28,7 +28,7 @@ function User() {
             <div
                 className='bg-gradient-to-r from-[#202020] to-[#404040] min-h-3/6 py-20 w-1/3 rounded-xl text-white text-center'
             >
-                <h1 className='text-3xl text-[#a3d36c] font-semibold mb-3'>{data.name}</h1>
+                <h1 className='text-5xl text-[#81fc5b] font-semibold mb-3'>{data.name}</h1>
                 <h2>User Name :  {data.username}</h2>
                 <h2>Email : {data.email}</h2>
                 <h2>Phone :  {data.phone}</h2>

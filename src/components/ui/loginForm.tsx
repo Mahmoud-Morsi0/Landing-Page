@@ -109,14 +109,14 @@ const {user,setUser}=useUser()
         <div className="flex justify-start items-center gap-5">
 
           <Button
-            className="bg-[#363636] hover:bg-[#abd665] disabled:inline-block hover:text-[#363636] "
+            className="bg-[#363636] hover:bg-[#81fc5b] disabled:inline-block hover:text-[#363636] "
             type="submit"
             disabled={pending}
           >
             Log In</Button>
           <p
             onClick={handellNavigate}
-            className="text-[#abd665] cursor-pointer text-sm"
+            className="text-[#81fc5b] cursor-pointer text-sm"
           >
             SignUp</p>
         </div>

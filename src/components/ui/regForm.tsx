@@ -121,12 +121,12 @@ export function RegForm() {
                 <div className="flex justify-start items-center gap-5">
 
                     <Button
-                        className="bg-[#363636] hover:bg-[#abd665] disabled:inline-block hover:text-[#363636] "
+                        className="bg-[#363636] hover:bg-[#81fc5b] disabled:inline-block hover:text-[#363636] "
                         type="submit"
                     >
                         Sign Up</Button>
                     <p
-                        className="text-[#abd665] cursor-pointer text-sm"
+                        className="text-[#81fc5b] cursor-pointer text-sm"
                     >
                         Log In</p>
                 </div>
