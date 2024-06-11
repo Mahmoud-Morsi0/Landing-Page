@@ -7,6 +7,7 @@ import Signup from './pages/signup';
 import Home from './pages/home';
 import ProtectedRoute from './protectedRoute/protectedRoute';
 import User from './pages/user';
+import Profile from './pages/profile';
 function App() {
 
   return (
@@ -20,6 +21,7 @@ function App() {
             <Route path='/home' element={<Home />} />
             <Route path='/home/user/:id' element={<User />} />
           </Route>
+            <Route path='/home/profile'  element={<Profile/>}/>
         </Routes>
       </BrowserRouter>
     </>
